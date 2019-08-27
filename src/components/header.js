@@ -2,41 +2,36 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
+import { Head, Nav, CartTotal } from "./header-styles"
+
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
+  <Head>
+    <h1>{siteTitle}</h1>
+    <Nav>
+      <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/">All</Link>
+        </li>
+        <li>
+          <Link to="/">Women</Link>
+        </li>
+        <li>
+          <Link to="/">Men</Link>
+        </li>
+        <li>
+          <CartTotal>1 {/* TO DO: Make the card number dynamic */}</CartTotal>
+          <Link to="/">Cart</Link>
+        </li>
+      </ul>
+    </Nav>
+  </Head>
 )
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
 }
 
 export default Header
