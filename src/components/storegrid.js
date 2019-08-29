@@ -1,19 +1,18 @@
 import React, { useState } from "react"
-import { Store } from "../data/store"
 import { CSSTransition } from "react-transition-group"
 import { Dollar } from "../helpers/currency-filter"
 import StarRatings from "react-star-ratings"
 import { StyledGroup, Item, Aside } from "./storegrid-styles"
 
-const StoreGrid = () => {
+const StoreGrid = ({ products }) => {
   const min = 0
   const max = 200
-  const [filteredProducts, updateFilteredProducts] = useState(Store)
+  const [filteredProducts, updateFilteredProducts] = useState(products)
   const [priceRange, updatePriceRange] = useState(max)
 
   const updateProducts = newPrice => {
     updatePriceRange(newPrice)
-    updateFilteredProducts(Store.filter(el => el.price < newPrice))
+    updateFilteredProducts(products.filter(item => item.price < newPrice))
   }
 
   return (
