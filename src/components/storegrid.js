@@ -3,6 +3,7 @@ import { CSSTransition } from "react-transition-group"
 import { Dollar } from "../helpers/currency-filter"
 import StarRatings from "react-star-ratings"
 import { StyledGroup, Item, Aside } from "./storegrid-styles"
+import PropTypes from "prop-types"
 
 const StoreGrid = ({ products }) => {
   const min = 0
@@ -67,6 +68,10 @@ const StoreGrid = ({ products }) => {
       </Aside>
     </div>
   )
+}
+
+StoreGrid.propTypes = {
+  products: PropTypes.array,
 }
 
 export default StoreGrid

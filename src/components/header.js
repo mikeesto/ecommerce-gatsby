@@ -1,7 +1,6 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-
 import { Head, Nav, CartTotal } from "./header-styles"
 
 const Header = ({ siteTitle }) => (
@@ -19,7 +18,7 @@ const Header = ({ siteTitle }) => (
           <Link to="/women">Women</Link>
         </li>
         <li>
-          <Link to="/">Men</Link>
+          <Link to="/men">Men</Link>
         </li>
         <li>
           <CartTotal>1 {/* TO DO: Make the card number dynamic */}</CartTotal>
