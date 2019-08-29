@@ -18,7 +18,7 @@ import seventeen from "../images/products/17.png"
 import eighteen from "../images/products/18.jpg"
 import nineteen from "../images/products/19.png"
 
-export const store = [
+export const Store = [
   {
     id: "9d436e98-1dc9-4f21-9587-76d4c0255e33",
     color: "Goldenrod",

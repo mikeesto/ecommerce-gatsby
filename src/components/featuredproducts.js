@@ -1,11 +1,11 @@
 import React from "react"
-import { store } from "../data/store"
+import { Store } from "../data/store"
 import { Featured } from "./featuredproducts-styles"
 import { Link } from "gatsby"
 import { Dollar } from "../helpers/currency-filter"
 
 const FeaturedProducts = () => {
-  const featuredData = store.slice(0, 3)
+  const featuredData = Store.slice(0, 3)
 
   return (
     <Featured>
@@ -15,7 +15,7 @@ const FeaturedProducts = () => {
       <div className="featureditems">
         {featuredData.map(product => (
           <div className="item" key={product.id}>
-            <img src={product.img}></img>
+            <img src={product.img} alt=""></img>
             <h3>{product.name}</h3>
             <h4>{Dollar(product.price)}</h4>
             <Link to={`/product/${product.id}`}>

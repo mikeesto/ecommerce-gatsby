@@ -151,6 +151,16 @@ input {
   grid-row-gap: 0px;
 }
 
+.img-contain {
+  max-height: 200px;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  img {
+    width: 100%;
+  }
+}
+
 /* no grid support */
 aside {
   float: left;
@@ -166,6 +176,10 @@ aside {
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
   padding: 0 !important;
+}
+
+.max {
+  float: right;
 }
 
 @media (max-width: 600px) {
