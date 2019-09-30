@@ -11,15 +11,37 @@ import {
 import StarRatings from "react-star-ratings"
 import { Dollar } from "../helpers/currency-filter"
 import FeaturedProducts from "../components/featuredproducts"
+import { useLocalStorage } from "react-use-storage"
 
 const Product = ({ location }) => {
   const [item, updateItem] = useState(Store)
   const [quantity, updateQuantity] = useState(1)
+  const [cart, updateCart] = useLocalStorage("cart", [])
 
   useEffect(() => {
     const ID = location.pathname.split("/")[2]
     updateItem(Store.find(el => el.id === ID))
   }, [])
+
+  const addToCart = () => {
+    const tempCart = [...cart]
+    let itemFound = false
+
+    tempCart.forEach(el => {
+      if (el.id === item.id) {
+        el.quantity += quantity
+        itemFound = true
+      }
+    })
+
+    if (!itemFound) {
+      // Item doesn't exist in the cart yet, so add it
+      const tempItem = item
+      tempItem.quantity = quantity
+      tempCart.push(tempItem)
+    }
+    updateCart(tempCart)
+  }
 
   return (
     <Layout>
@@ -64,7 +86,9 @@ const Product = ({ location }) => {
             </strong>
           </p>
           <p>
-            <button className="button purchase">Add to Cart</button>
+            <button className="button purchase" onClick={addToCart}>
+              Add to Cart
+            </button>
           </p>
         </section>
       </ItemContain>
