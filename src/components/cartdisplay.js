@@ -73,9 +73,11 @@ const cartTable = cart => {
 const cartEmpty = () => {
   return (
     <section className="center">
-      <p>Your cart is empty, fill it up</p>
+      <p>Your cart is empty, fill it up!</p>
       <button className="pay-with-stripe">
-        <Link to="/">Back Home</Link>
+        <Link style={{ color: "white" }} to="/">
+          Back Home
+        </Link>
       </button>
     </section>
   )
