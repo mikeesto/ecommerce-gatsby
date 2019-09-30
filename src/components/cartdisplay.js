@@ -12,13 +12,9 @@ import {
   ProductImg,
   Payment,
 } from "./cartdisplay-styles"
+import { CartTotal } from "../helpers/cart-total"
 
 const cartTable = cart => {
-  const cartTotal = cart.reduce(
-    (acc, next) => acc + next.quantity * next.price,
-    0
-  )
-
   return (
     <>
       <Table>
@@ -59,10 +55,10 @@ const cartTable = cart => {
           </div>
           <div className="num">
             <p>
-              <strong>{Dollar(cartTotal)}</strong>
+              <strong>{Dollar(CartTotal(cart))}</strong>
             </p>
             <p>Free Shipping</p>
-            <p className="golden">{Dollar(cartTotal)}</p>
+            <p className="golden">{Dollar(CartTotal(cart))}</p>
           </div>
         </div>
       </Payment>

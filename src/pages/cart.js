@@ -52,7 +52,9 @@ const Cart = () => {
                 </p>
                 <p>Forgot something?</p>
                 <button className="pay-with-stripe">
-                  <Link to="/">Back to Home</Link>
+                  <Link style={{ color: "white" }} to="/">
+                    Back to Home
+                  </Link>
                 </button>
               </Success>
             ) : null

@@ -1,12 +1,16 @@
 import React, { useContext, useState } from "react"
+import { useLocalStorage } from "react-use-storage"
 import { CartUIContext } from "../context/cartUI-context"
 import { PaymentSection } from "./card-styles"
 import { StripeProvider, Elements } from "react-stripe-elements"
 import Checkout from "./checkout"
 
 const Payment = () => {
-  const [email, updateEmail] = useState()
+  const [email, updateEmail] = useState("")
   const [complete, updateComplete] = useState(false)
+  const [cart, updateCart] = useLocalStorage("cart", [])
+  const [cartUIStatus, updateCartUI] = useContext(CartUIContext)
+
   return (
     <PaymentSection>
       <h3>Please enter your payment details:</h3>
@@ -29,12 +33,16 @@ const Payment = () => {
       </small>
       <StripeProvider apiKey="pk_test_5ThYi0UvX3xwoNdgxxxTxxrG">
         <Elements>
-          <Checkout updateComplete={updateComplete}></Checkout>
+          <Checkout
+            updateComplete={updateComplete}
+            email={email}
+            complete={complete}
+            cart={cart}
+            updateCart={updateCart}
+            updateCartUI={updateCartUI}
+          ></Checkout>
         </Elements>
       </StripeProvider>
-      <button className="pay-with-stripe button" disabled={!complete || !email}>
-        Pay with credit card
-      </button>
     </PaymentSection>
   )
 }
