@@ -30,7 +30,6 @@
     "react-star-ratings": "^2.3.0",
     "react-stripe-elements": "^5.0.1",
     "react-transition-group": "^4.2.2",
-    "react-use-storage": "^0.4.0",
     "stripe": "^7.9.1",
     "styled-components": "^4.3.2",
     "uuid": "^3.3.3"

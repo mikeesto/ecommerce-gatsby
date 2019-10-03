@@ -1,11 +1,11 @@
 import React, { useContext } from "react"
-import { useLocalStorage } from "react-use-storage"
+import { CartContext } from "../context/cart"
 import { CartUIContext } from "../context/cartUI"
 import { Section, H2, H4 } from "./cartsteps-styles"
 
 const CartSteps = () => {
   const [cartUIStatus, updateCartUI] = useContext(CartUIContext)
-  const [cart, updateCart] = useLocalStorage("cart", [])
+  const [cart, updateCart] = useContext(CartContext)
   return (
     <Section>
       <div className="shopping">

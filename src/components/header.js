@@ -1,11 +1,11 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import React, { useState, useEffect } from "react"
-import { useLocalStorage } from "react-use-storage"
+import React, { useState, useEffect, useContext } from "react"
+import { CartContext } from "../context/cart"
 import { Head, Nav, CartTotal } from "./header-styles"
 
 const Header = ({ siteTitle }) => {
-  const [cart, updateCart] = useLocalStorage("cart", [])
+  const [cart, updateCart] = useContext(CartContext)
   const [cartCount, updateCartCount] = useState(0)
 
   useEffect(() => {

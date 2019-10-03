@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react"
-import { useLocalStorage } from "react-use-storage"
+import { CartContext } from "../context/cart"
 import { CartUIContext } from "../context/cartUI"
 import { PaymentSection } from "./card-styles"
 import { StripeProvider, Elements } from "react-stripe-elements"
@@ -8,7 +8,7 @@ import Checkout from "./checkout"
 const Payment = () => {
   const [email, updateEmail] = useState("")
   const [complete, updateComplete] = useState(false)
-  const [cart, updateCart] = useLocalStorage("cart", [])
+  const [cart, updateCart] = useContext(CartContext)
   const [cartUIStatus, updateCartUI] = useContext(CartUIContext)
 
   return (

@@ -1,7 +1,7 @@
-import React from "react"
+import React, { useContext } from "react"
 import { Link } from "gatsby"
 import { Dollar } from "../helpers/currency-filter"
-import { useLocalStorage } from "react-use-storage"
+import { CartContext } from "../context/cart"
 import Card from "./card"
 import {
   Table,
@@ -80,7 +80,7 @@ const cartEmpty = () => {
 }
 
 const CartDisplay = () => {
-  const [cart, updateCart] = useLocalStorage("cart", [])
+  const [cart, updateCart] = useContext(CartContext)
   return <>{cart.length > 0 ? cartTable(cart) : cartEmpty()}</>
 }
 

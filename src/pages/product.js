@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, useContext } from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Store } from "../data/store"
@@ -11,12 +11,12 @@ import {
 import StarRatings from "react-star-ratings"
 import { Dollar } from "../helpers/currency-filter"
 import FeaturedProducts from "../components/featuredproducts"
-import { useLocalStorage } from "react-use-storage"
+import { CartContext } from "../context/cart"
 
 const Product = ({ location }) => {
   const [item, updateItem] = useState(Store)
   const [quantity, updateQuantity] = useState(1)
-  const [cart, updateCart] = useLocalStorage("cart", [])
+  const [cart, updateCart] = useContext(CartContext)
 
   useEffect(() => {
     const ID = location.pathname.split("/")[2]
@@ -26,14 +26,12 @@ const Product = ({ location }) => {
   const addToCart = () => {
     const tempCart = [...cart]
     let itemFound = false
-
     tempCart.forEach(el => {
       if (el.id === item.id) {
         el.quantity += quantity
         itemFound = true
       }
     })
-
     if (!itemFound) {
       // Item doesn't exist in the cart yet, so add it
       const tempItem = item
