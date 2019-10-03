@@ -1,2 +1,7 @@
 [build]
   functions = "functions"
+
+[[redirects]]
+  from = "/product/:id"
+  to = "/product/*"
+  status = 200
