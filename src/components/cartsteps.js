@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
 import { useLocalStorage } from "react-use-storage"
-import { CartUIContext } from "../context/cartUI-context"
+import { CartUIContext } from "../context/cartUI"
 import { Section, H2, H4 } from "./cartsteps-styles"
 
 const CartSteps = () => {

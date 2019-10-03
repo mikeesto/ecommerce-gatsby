@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react"
 import { useLocalStorage } from "react-use-storage"
-import { CartUIContext } from "../context/cartUI-context"
+import { CartUIContext } from "../context/cartUI"
 import { PaymentSection } from "./card-styles"
 import { StripeProvider, Elements } from "react-stripe-elements"
 import Checkout from "./checkout"

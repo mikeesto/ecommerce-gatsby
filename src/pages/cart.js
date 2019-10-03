@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 import { CometSpinLoader } from "react-css-loaders"
 import CartSteps from "../components/cartsteps"
 import CartDisplay from "../components/cartdisplay"
-import { CartUIContext, CartUIProvider } from "../context/cartUI-context"
+import { CartUIContext, CartUIProvider } from "../context/cartUI"
 import SalesBoxes from "../components/salesboxes"
 
 const Loading = styled.section`
