@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useContext } from "react"
 import StarRatings from "react-star-ratings"
+import { reactLocalStorage } from "reactjs-localstorage"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Store } from "../data/store"
@@ -41,6 +42,7 @@ const Product = ({ location }) => {
       tempCart.push(tempItem)
     }
     updateCart(tempCart)
+    reactLocalStorage.setObject("cart", tempCart)
   }
 
   return (
