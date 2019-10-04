@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useContext } from "react"
+import StarRatings from "react-star-ratings"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Store } from "../data/store"
@@ -8,7 +9,6 @@ import {
   UpdateNumButton,
   Review,
 } from "../components/product-styles"
-import StarRatings from "react-star-ratings"
 import { Dollar } from "../helpers/currency-filter"
 import FeaturedProducts from "../components/featuredproducts"
 import { CartContext } from "../context/cart"
@@ -26,12 +26,14 @@ const Product = ({ location }) => {
   const addToCart = () => {
     const tempCart = [...cart]
     let itemFound = false
+
     tempCart.forEach(el => {
       if (el.id === item.id) {
         el.quantity += quantity
         itemFound = true
       }
     })
+
     if (!itemFound) {
       // Item doesn't exist in the cart yet, so add it
       const tempItem = item

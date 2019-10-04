@@ -1,8 +1,8 @@
 import React, { useContext, useState } from "react"
+import { StripeProvider, Elements } from "react-stripe-elements"
 import { CartContext } from "../context/cart"
 import { CartUIContext } from "../context/cartUI"
 import { PaymentSection } from "./card-styles"
-import { StripeProvider, Elements } from "react-stripe-elements"
 import Checkout from "./checkout"
 
 const Payment = () => {

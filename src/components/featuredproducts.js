@@ -1,7 +1,7 @@
 import React from "react"
+import { Link } from "gatsby"
 import { Store } from "../data/store"
 import { Featured } from "./featuredproducts-styles"
-import { Link } from "gatsby"
 import { Dollar } from "../helpers/currency-filter"
 
 const FeaturedProducts = () => {

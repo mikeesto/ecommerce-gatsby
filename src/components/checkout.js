@@ -35,9 +35,8 @@ class Checkout extends React.Component {
   handleSubmit = event => {
     event.preventDefault()
 
-    this.props.stripe.createToken().then(async data => {
+    this.props.stripe.createToken().then(async () => {
       try {
-        // TODO: change this netlify link
         await axios
           .post(
             "https://ecommerce-gatsby.netlify.com/.netlify/functions/index",

@@ -1,6 +1,6 @@
+import React, { useState, useEffect, useContext } from "react"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import React, { useState, useEffect, useContext } from "react"
 import { CartContext } from "../context/cart"
 import { Head, Nav, CartTotal } from "./header-styles"
 
