@@ -1,20 +1,23 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { reactLocalStorage } from "reactjs-localstorage"
 
 const CartContext = React.createContext()
 
 const CartProvider = props => {
-  let storedCart = reactLocalStorage.getObject("cart")
+  const [cart, updateCart] = useState([])
 
-  // Check if there are no entries, if so change the empty object to an empty array
-  if (Object.entries(storedCart).length === 0) {
-    storedCart = []
-  }
+  useEffect(() => {
+    let storedCart = reactLocalStorage.getObject("cart")
 
-  const cartHook = useState(storedCart)
+    // Check if there are no entries, if so change the empty object to an empty array
+    if (Object.entries(storedCart).length === 0) {
+      storedCart = []
+    }
+    updateCart(storedCart)
+  }, [])
 
   return (
-    <CartContext.Provider value={cartHook}>
+    <CartContext.Provider value={[cart, updateCart]}>
       {props.children}
     </CartContext.Provider>
   )
