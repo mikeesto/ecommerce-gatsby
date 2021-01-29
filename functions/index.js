@@ -4,6 +4,7 @@ const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY),
   headers = {
     "Access-Control-Allow-Origin": "*",
     "Access-Control-Allow-Headers": "Content-Type",
+    'Access-Control-Allow-Methods': 'POST'
   }
 
 exports.handler = async (event, context) => {
@@ -53,7 +54,7 @@ exports.handler = async (event, context) => {
               description: "Sample Charge",
             },
             {
-              idempotency_key: data.stripeIdempotency,
+              idempotencyKey: data.stripeIdempotency,
             }
           )
           .then(result => {

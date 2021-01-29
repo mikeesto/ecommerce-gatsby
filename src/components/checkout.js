@@ -39,7 +39,7 @@ class Checkout extends React.Component {
       try {
         await axios
           .post(
-            "https://ecommerce-gatsby.netlify.com/.netlify/functions/index",
+            "/.netlify/functions/index",
             {
               stripeEmail: this.props.email,
               stripeAmt: Math.floor(CartTotal(this.props.cart) * 100), // it expects the price in cents, as an integer
