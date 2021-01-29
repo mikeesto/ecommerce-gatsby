@@ -1,7 +1,7 @@
 {
   "name": "ecommerce-gatsby",
   "private": true,
-  "description": "A simple e-commerce site developed with Gatsby and Netlify functions",
+  "description": "An example e-commerce site developed with Gatsby, Stripe and Netlify functions",
   "version": "0.1.0",
   "author": "Michael Esteban",
   "dependencies": {
@@ -12,12 +12,12 @@
     "gatsby-image": "^2.10.0",
     "gatsby-plugin-manifest": "^2.11.0",
     "gatsby-plugin-offline": "^3.9.0",
-    "gatsby-plugin-prefetch-google-fonts": "^1.4.3",
     "gatsby-plugin-react-helmet": "^3.9.0",
     "gatsby-plugin-sass": "^3.1.0",
     "gatsby-plugin-sharp": "^2.13.3",
     "gatsby-plugin-stripe": "^1.2.4",
     "gatsby-plugin-styled-components": "^3.9.0",
+    "gatsby-plugin-webfonts": "^1.1.4",
     "gatsby-source-filesystem": "^2.10.0",
     "gatsby-transformer-sharp": "^2.11.0",
     "node-sass": "^5.0.0",
@@ -48,12 +48,5 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
   }
 }
