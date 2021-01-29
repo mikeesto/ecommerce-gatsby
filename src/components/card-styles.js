@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const PaymentSection = styled.section`
+export const CardStyled = styled.section`
   margin-top: 20px;
 
   input,
@@ -10,5 +10,9 @@ export const PaymentSection = styled.section`
 
   button {
     margin-top: 20px;
+  }
+  
+  .empty-btn {
+    margin-bottom: 30px;
   }
 `

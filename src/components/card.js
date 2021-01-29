@@ -2,17 +2,18 @@ import React, { useContext, useState } from "react"
 import { StripeProvider, Elements } from "react-stripe-elements"
 import { CartContext } from "../context/cart"
 import { CartUIContext } from "../context/cartUI"
-import { PaymentSection } from "./card-styles"
+import { CardStyled } from "./card-styles"
 import Checkout from "./checkout"
 
 const Payment = () => {
   const [email, updateEmail] = useState("")
   const [complete, updateComplete] = useState(false)
-  const [cart, updateCart] = useContext(CartContext)
+  const [cart, _, emptyCart] = useContext(CartContext)
   const [cartUIStatus, updateCartUI] = useContext(CartUIContext)
 
   return (
-    <PaymentSection>
+    <CardStyled>
+      <button className="empty-btn" onClick={() => emptyCart()}>Empty Cart</button>
       <h3>Please enter your payment details:</h3>
       <label htmlFor="email">Email</label>
       <br />
@@ -38,12 +39,12 @@ const Payment = () => {
             email={email}
             complete={complete}
             cart={cart}
-            updateCart={updateCart}
+            emptyCart={emptyCart}
             updateCartUI={updateCartUI}
           ></Checkout>
         </Elements>
       </StripeProvider>
-    </PaymentSection>
+    </CardStyled>
   )
 }
 

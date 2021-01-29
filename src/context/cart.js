@@ -3,9 +3,10 @@ import { reactLocalStorage } from "reactjs-localstorage"
 
 const CartContext = React.createContext()
 
-const CartProvider = props => {
-  const [cart, updateCart] = useState([])
+const CartProvider = ({children}) => {
+  const [cart, setCart] = useState([])
 
+  // Update cart from local storage
   useEffect(() => {
     let storedCart = reactLocalStorage.getObject("cart")
 
@@ -13,12 +14,17 @@ const CartProvider = props => {
     if (Object.entries(storedCart).length === 0) {
       storedCart = []
     }
-    updateCart(storedCart)
+    setCart(storedCart)
   }, [])
 
+  const emptyCart = () => {
+    setCart([]);
+    reactLocalStorage.setObject('cart', [])
+  }
+  
   return (
-    <CartContext.Provider value={[cart, updateCart]}>
-      {props.children}
+    <CartContext.Provider value={[cart, setCart, emptyCart]}>
+      {children}
     </CartContext.Provider>
   )
 }

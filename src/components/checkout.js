@@ -55,7 +55,7 @@ class Checkout extends React.Component {
           .then(res => {
             if (res.status === 200) {
               this.props.updateCartUI("success")
-              setTimeout(() => this.props.updateCart([]), 3000)
+              setTimeout(() => this.props.emptyCart(), 3000)
             } else {
               this.props.updateCartUI("failure")
               // allow them to try again
