@@ -2,7 +2,7 @@ import React from "react"
 import { injectStripe, CardElement } from "react-stripe-elements"
 import styled from "styled-components"
 import axios from "axios"
-import uuidv1 from "uuid/v1"
+import { v4 as uuidv4 } from 'uuid';
 import { CartTotal } from "../helpers/cart-total"
 
 const CardElementStyled = styled(CardElement)`
@@ -44,7 +44,7 @@ class Checkout extends React.Component {
               stripeEmail: this.props.email,
               stripeAmt: Math.floor(CartTotal(this.props.cart) * 100), // it expects the price in cents, as an integer
               stripeToken: "tok_visa", // testing token
-              stripeIdempotency: uuidv1(), // use this library to create a unique id
+              stripeIdempotency: uuidv4(), // use this library to create a unique id
             },
             {
               headers: {
