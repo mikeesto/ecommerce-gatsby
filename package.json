@@ -2,7 +2,7 @@
   "name": "ecommerce-gatsby",
   "private": true,
   "description": "An example e-commerce site developed with Gatsby, Stripe and Netlify functions",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "Michael Esteban",
   "dependencies": {
     "axios": "^0.21.1",

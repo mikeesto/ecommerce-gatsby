@@ -16,7 +16,7 @@ const Footer = () => {
       <Blurb>
         <p>
           This project was built with Gatsby &{" "}
-          <a href="https://github.com/MichaelE1/ecommerce-gatsby">
+          <a href="https://github.com/mikeesto/ecommerce-gatsby">
             is open source on Github
           </a>
         </p>
