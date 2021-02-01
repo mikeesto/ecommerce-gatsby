@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
-import { CometSpinLoader } from "react-css-loaders"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import CartSteps from "../components/cartsteps"
@@ -35,7 +34,7 @@ const Cart = () => {
           {context =>
             context[0] === "loading" ? (
               <Loading>
-                <CometSpinLoader />
+                <h2>Loading...</h2>
               </Loading>
             ) : null
           }
