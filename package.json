@@ -26,6 +26,7 @@
     "react": "^16.0.1",
     "react-dom": "^16.0.1",
     "react-helmet": "^6.1.0",
+    "react-is": "^17.0.1",
     "react-star-ratings": "^2.3.0",
     "react-stripe-elements": "^6.1.2",
     "react-transition-group": "^4.4.1",
